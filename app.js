@@ -20,7 +20,7 @@ function addNoteCard(title, text) {
   `;
     container.insertAdjacentHTML('beforeend', cardHTML);
 
-    // Agregar evento al botón eliminar recién creado
+    // Agregar evento al botón eliminar
     const lastCard = container.lastElementChild;
     const deleteBtn = lastCard.querySelector('.delete-btn');
     deleteBtn.addEventListener('click', function () {
@@ -38,6 +38,7 @@ document.getElementById('save-note-btn').addEventListener('click', function (e) 
   const text = textarea.value.trim();
   if (text) {
     addNoteCard(title, text);
+    //limpiar los campos para nueva nota
     textarea.value = '';
     textarea.parentElement.classList.remove('is-dirty');
     titleInput.value = '';
